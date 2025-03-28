@@ -24,7 +24,7 @@ pipeline {
         sh 'docker build -t kavyaganji95/insureme:latest .'
                     }
             }
-    stage(' to Dockerhub') {
+    stage('Login to Dockerhub') {
       steps {
       withCredentials([string(credentialsId: 'dockeruser', variable: 'dockervarcode')]) {
         // withCredentials([usernamePassword(credentialsId: 'dockeruser', passwordVariable: 'dockerpass', usernameVariable: 'username')]) {
